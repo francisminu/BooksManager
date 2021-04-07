@@ -69,6 +69,7 @@ namespace TechLibrary.Services
             {
                 bookItem.ShortDescr = requestModel.ShortDescription;
                 bookItem.ThumbnailUrl = requestModel.ThumbnailUrl;
+                bookItem.Title = requestModel.Title;
                 await _dataContext.SaveChangesAsync();
             }
             return bookItem;

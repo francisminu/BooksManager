@@ -92,7 +92,7 @@ namespace TechLibrary.Controllers
         [Route("add")]
         public async Task<IActionResult> AddBook(AddBookRequestModel requestModel)
         {
-            _logger.LogInformation("Update book details");
+            _logger.LogInformation("Add a book");
             var newBook = _mapper.Map<Book>(requestModel);
             var updatedBook = await _bookService.AddBookAsync(newBook);
             return Ok(updatedBook);

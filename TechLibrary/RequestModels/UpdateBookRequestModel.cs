@@ -9,6 +9,7 @@ namespace TechLibrary.RequestModels
     {
         public string ShortDescription { get; set; }
         public string ThumbnailUrl { get; set; }
+        public string Title { get; set; }
         public int BookId { get; set; }
     }
 }

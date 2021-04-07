@@ -96,7 +96,8 @@
                     {
                         "BookId": this.id,
                         "ShortDescription": this.shortDescription,
-                        "ThumbnailUrl": this.imageUrl
+                        "ThumbnailUrl": this.imageUrl,
+                        "Title": this.title
                     }
                 };
                 

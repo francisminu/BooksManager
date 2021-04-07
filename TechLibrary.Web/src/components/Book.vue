@@ -51,14 +51,29 @@
             title: ''
         }),
         mounted() {
-            axios.get(`https://localhost:5001/books/${this.id}`)
-                .then(response => {
-                    this.book = response.data;
-                    if(!this.book)
+            
+            const options = {
+                    url: "https://localhost:5001/books/getbyid",
+                    json: true,
+                    method: 'PUT',
+                    timeout: 5000,
+                    headers: {
+                    'Content-Type': 'application/json',
+                    },
+                    data:
                     {
-                        this.isNewBook = true;
+                        "BookId": this.id
                     }
-                });
+                };
+                
+                    axios(options)
+                    .then((response) => {
+                        this.book = response.data;
+                        if(!this.book)
+                        {
+                            this.isNewBook = true;
+                        }
+                    });
         },
         methods: {
             getCurrentDetails()

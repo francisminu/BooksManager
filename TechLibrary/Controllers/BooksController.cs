@@ -45,12 +45,13 @@ namespace TechLibrary.Controllers
 
         
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        [HttpPut]
+        [Route("getbyid")]
+        public async Task<IActionResult> GetById(GetBookRequestModel requestModel)
         {
-            _logger.LogInformation($"Get book by id {id}");
+            _logger.LogInformation($"Get book by id {requestModel.BookId}");
 
-            var book = await _bookService.GetBookByIdAsync(id);
+            var book = await _bookService.GetBookByIdAsync(requestModel.BookId);
 
             var bookResponse = _mapper.Map<BookResponse>(book);
 
